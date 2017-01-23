@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:text="1.00"
+        android:ems="10"
+        android:layout_marginTop="15dp"
+        android:id="@+id/Measurement"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Measurement"
+        android:layout_alignLeft="@+id/Measurement"
+        android:layout_alignEnd="@+id/Measurement"
+        android:layout_marginTop="15dp"
+        android:id="@+id/UnitFrom"
+        android:entries="@array/UnitsArray" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/UnitTo"
+        android:layout_below="@+id/UnitFrom"
+        android:layout_alignLeft="@+id/UnitFrom"
+        android:layout_alignEnd="@+id/UnitFrom"
+        android:entries="@array/UnitsArray"/>
+
+    <Button
+        android:text="@string/BtnConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UnitTo"
+        android:layout_alignLeft="@+id/UnitTo"
+        android:layout_marginTop="15dp"
+        android:id="@+id/convert"
+        android:layout_alignRight="@+id/UnitFrom"
+        android:onClick="myConvert" />
+
+    <TextView
+        android:text="Result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/convert"
+        android:layout_alignLeft="@+id/convert"
+        android:layout_alignEnd="@+id/convert"
+        android:layout_marginTop="15dp"
+        android:id="@+id/myResult"
+        android:textAppearance="@android:style/TextAppearance.Holo.Large" />
+</RelativeLayout>
